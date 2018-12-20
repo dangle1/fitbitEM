@@ -24,6 +24,7 @@ class EM:
 
         return sigma 
 
+    # Initialize pi
     def initialize_pi(self):
         pi = np.full(self.num_clusters, 1/self.num_clusters)
 
