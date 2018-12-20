@@ -44,6 +44,7 @@ class EM:
 
         return ln_p
 
+    # Expectation Step
     def E_step(self, mu, sigma, pi):
         K = pi.shape[0]
         N = self.data.shape[0]
