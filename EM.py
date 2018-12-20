@@ -56,6 +56,7 @@ class EM:
 
         return gamma_z
 
+    # Maximization Step
     def M_step(self, mu, sigma, gamma_z):
         mu_new = np.zeros(mu.shape)
         sigma_new = np.zeros(sigma.shape)
