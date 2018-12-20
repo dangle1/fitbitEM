@@ -9,11 +9,15 @@ class EM:
         np.random.seed(1904)
 
 
+    # Select random centers for clustering
     def initialize_mu(self):
         mu = self.data[np.random.choice(self.data.shape[0], self.num_clusters, replace=False)]
         
         return mu
 
+    # initialize variances for each of the three dimensions. 
+    # NOTE: setting all three dimensions to 10000 is ham-handed. 
+    # TODO: be smarter about which variance values to initialize to.
     def initialize_sigma(self):
         D = self.data.shape[1]
         sigma = np.zeros((self.num_clusters, D, D))
@@ -24,15 +28,17 @@ class EM:
 
         return sigma 
 
-    # initialize pi
+    # initialize the likelihood of each center being assigned based on a uniformdistribution.
     def initialize_pi(self):
         pi = np.full(self.num_clusters, 1/self.num_clusters)
 
         return pi 
 
+    # Convenience method that calls the above three. 
     def initialize_params(self):
         return (self.initialize_mu(), self.initialize_sigma(), self.initialize_pi())
 
+    # Calculate the log-likelihood of the clusters generating the datapoints. 
     def eval_log_likelihood(self, mu, sigma, pi):
         K = pi.shape[0]
         N = self.data.shape[0]
@@ -74,6 +80,7 @@ class EM:
 
         return (mu_new, sigma_new, pi_new)
 
+    # Convenience method for executing E and M steps in a for loop.
     def execute(self):
         (mu, sigma, pi) = self.initialize_params()
         prev_likelihood = self.eval_log_likelihood(mu, sigma, pi)

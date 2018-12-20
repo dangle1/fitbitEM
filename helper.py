@@ -3,6 +3,8 @@ import numpy as np
 
 from matplotlib.patches import Ellipse
 from mpl_toolkits.mplot3d import Axes3D
+
+# Plot a 2d clsuter based on cluster parameters and responsibilities
 def plot_cluster(data, mu, sigma, gamma_z, epoch):
     ax = plt.gca()
     colors = []
@@ -24,6 +26,8 @@ def plot_cluster(data, mu, sigma, gamma_z, epoch):
         ax.add_artist(cluster)
     
     plt.show()
+# Plot a 3d clsuter based on cluster parameters and responsibilities
+# NOTE: in this method we don't display the variance 
 def plot_cluster_3d(data, mu, sigma, gamma_z, epoch):
     K = mu.shape[0]
     fig = plt.figure()
