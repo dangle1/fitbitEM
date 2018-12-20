@@ -34,10 +34,10 @@ These were the following technologies I used in this analysis:
 
 Each phase of the project is split into dedicated notebooks which are structured as such: 
 
-1. 01_Gather_Data.ipynb: I script the code for scraping data from Fitbit's API
-2. 02_Explore_Data.ipynb: I perform data exploration as well as create the ground truth clusters. 
-3. 03_Analyze_Data.ipynb: I apply EM against the data and draw conclusions. 
-4. EM.ipynb: I implement the algorithm based on mathematical definition. 
+1. [01_Gather_Data.ipynb](01_Gather_Data.ipynb): I script the code for scraping data from Fitbit's API
+2. [02_Explore_Data.ipynb](02_Explore_Data.ipynb): I perform data exploration as well as create the ground truth clusters. 
+3. [03_Analyze_Data.ipynb](03_Analyze_Data.ipynb): I apply EM against the data and draw conclusions. 
+4. [EM.ipynb](EM.ipynb): I implement the algorithm based on mathematical definition. 
 
 ## TL;DR
 
