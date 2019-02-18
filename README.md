@@ -28,7 +28,7 @@ These were the following technologies I used in this analysis:
 * Jupyter Notebook
 * Numpy
 * Matplotlib
-* Fitbit python library (for navigatin the OAuth 2.0 workflow)
+* Fitbit python library (for navigating the OAuth 2.0 workflow)
 
 ## Organization of Notebooks
 
